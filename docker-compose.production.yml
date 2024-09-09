@@ -1,5 +1,3 @@
-version: '3'
-
 volumes:
   pg_data:
   static:
@@ -7,29 +5,31 @@ volumes:
 
 services:
   db:
-    image: postgres:13.10
+    image: postgres:13
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    build: ./backend/
+    image: nailes/kittygram_backend
     env_file: .env
+    depends_on:
+      - db
     volumes:
       - static:/backend_static
       - media:/media/
-    depends_on:
-      - db
 
   frontend:
+    image: nailes/kittygram_frontend
     env_file: .env
-    build: ./frontend/
+    depends_on:
+      - backend
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
 
   gateway:
-    build: ./nginx/
+    image: nailes/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
