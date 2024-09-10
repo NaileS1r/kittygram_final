@@ -31,6 +31,8 @@ services:
   gateway:
     image: nailes/kittygram_gateway
     env_file: .env
+    depends_on:
+      - backend
     ports:
       - 9000:80
     volumes:
