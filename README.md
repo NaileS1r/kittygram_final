@@ -12,20 +12,20 @@ git clone git@github.com:NaileS1r/kittygram_final.git
 
 Создание Docker-образов
 
-Замените DockerHub_USERNAME на свой логин на DockerHub:
+Замените DOCKERHUB_USERNAME на свой логин на DockerHub:
 
 cd frontend
-docker build -t DockerHub_USERNAME/kittygram_frontend .
+docker build -t DOCKERHUB_USERNAME/kittygram_frontend .
 cd ../backend
-docker build -t DockerHub_USERNAME/kittygram_backend .
+docker build -t DOCKERHUB_USERNAME/kittygram_backend .
 cd ../nginx
-docker build -t DockerHub_USERNAME/kittygram_gateway . 
+docker build -t DOCKERHUB_USERNAME/kittygram_gateway . 
 
 Загрузите образы на DockerHub:
 
-docker push DockerHub_USERNAME/kittygram_frontend
-docker push DockerHub_USERNAME/kittygram_backend
-docker push DockerHub_USERNAME/kittygram_gateway
+docker push DOCKERHUB_USERNAME/kittygram_frontend
+docker push DOCKERHUB_USERNAME/kittygram_backend
+docker push DOCKERHUB_USERNAME/kittygram_gateway
 
 Деплой на сервере
 
@@ -89,7 +89,7 @@ sudo service nginx reload
 
 kittygram/.github/workflows/main.yml
 
-Для адаптации его к вашему серверу добавьте секреты в GitHub Actions:
+Добавьте секреты в GitHub Actions:
 
 DOCKER_USERNAME                # имя пользователя в DockerHub
 DOCKER_PASSWORD                # пароль пользователя в DockerHub
