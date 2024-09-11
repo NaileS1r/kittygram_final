@@ -1,8 +1,16 @@
-Kittygram — социальная сеть для обмена фотографиями любимых питомцев.
+Kittygram — социальная сеть для обмена фотографиями любимых котиков.
+
+![workflow](https://github.com/NaileS1r/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 Описание проекта
 
-Пользователи могут регистрироваться, загружать фотографии с описанием и смотреть питомцев других пользователей.
+Пользователи могут регистрироваться, загружать фотографии с описанием и смотреть котов других пользователей.
+
+Стек:
+Python 3.11.1,
+Django 3.2.3,
+djangorestframework==3.12.4,
+PostgreSQL 13.10
 
 Установка
 
@@ -101,10 +109,7 @@ SSH_PASSPHRASE                 # пароль для SSH-ключа
 TELEGRAM_TO                    # ID вашего телеграм-аккаунта
 TELEGRAM_TOKEN                 # токен вашего бота
 
-Технологии
-
-Python 3.11.1, Django 3.2.3, djangorestframework==3.12.4, PostgreSQL 13.10
 
 Автор
 
-Naile Sirazitdinov - NaileS1r
+Naile Sirazitdinov - NaileS1r(Github)
